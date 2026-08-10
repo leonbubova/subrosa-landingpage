@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://leonbubova.github.io/subrosa-landingpage/sitemap.xml

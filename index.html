@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--
+
+     _____  _   _ ______ ______  _____  _____   ___
+    /  ___|| | | || ___ \| ___ \|  _  |/  ___| / _ \
+    \ `--. | | | || |_/ /| |_/ /| | | |\ `--. / /_\ \
+     `--. \| | | || ___ \|    / | | | | `--. \|  _  |
+    /\__/ /| |_| || |_/ /| |\ \ \ \_/ //\__/ /| | | |
+    \____/  \___/ \____/ \_| \_| \___/ \____/ \_| |_/
+
+    deine stimme, dein text.
+    https://leonbubova.github.io/subrosa-landingpage
+
+    neugierig? du liest den quellcode.
+    das gefällt uns. 🤫
+
+-->
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subrosa. deine stimme, dein text &lt;3</title>
+  <meta name="description" content="Subrosa nimmt auf, was du sagst, und macht daraus fertigen text. direkt in deine lieblings apps.">
+  <link rel="canonical" href="https://leonbubova.github.io/subrosa-landingpage">
+  <meta name="theme-color" content="#121215">
+  <meta property="og:title" content="Subrosa. deine stimme, dein text">
+  <meta property="og:description" content="Subrosa nimmt auf, was du sagst, und macht daraus fertigen text. direkt in deine lieblings apps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://leonbubova.github.io/subrosa-landingpage">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://leonbubova.github.io/subrosa-landingpage/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://leonbubova.github.io/subrosa-landingpage/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" href="fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/newsreader-var-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="edit-bar" id="editBar">
+    <span class="edit-bar-label">editing: <strong id="editStyleLabel">casual</strong></span>
+    <button class="edit-export" id="editExport">export JSON</button>
+    <button class="edit-close" id="editClose">&times;</button>
+  </div>
+
+  <div class="fluid-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" data-edit>Subrosa</a>
+      <div class="nav-links">
+        <a href="#download">Early Access</a>
+        <a href="#desktop">Desktop</a>
+        <a href="#join">Community</a>
+        <a href="#" id="editToggle" style="display:none">Edit</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <section class="hero" id="demo">
+      <div class="hero-copy">
+        <h1 data-key="heroTitle">deine gedanken direkt als text. <em>ohne tippen &lt;3</em></h1>
+        <p class="hero-sub" data-key="heroSub">Subrosa nimmt auf, was du sagst, und macht daraus fertigen text. direkt in deine lieblings apps.</p>
+      </div>
+      <div class="demo-box">
+        <div class="demo-header">
+          <div class="demo-dot" id="demoDot"></div>
+          <span class="demo-status" id="demoStatus">nimmt auf...</span>
+          <button class="mute-btn" id="muteBtn" aria-label="Sound an/aus">unmute</button>
+        </div>
+        <canvas class="waveform-canvas" id="waveform" width="920" height="80" aria-label="Waveform Animation"></canvas>
+        <p class="demo-text" id="demoText"><span class="cursor"></span></p>
+      </div>
+      <a href="#pricing" class="hero-cta">
+<span data-key="heroCta">jetzt 3 tage kostenlos testen</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <div class="compat-logos">
+        <span>WhatsApp</span>
+        <span>Telegram</span>
+        <span>Signal</span>
+        <span class="desktop-only">Discord</span>
+        <span class="desktop-only">Notion</span>
+        <span class="desktop-only">und viele mehr...</span>
+        <span class="mobile-only">und mehr...</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="style-switch fade-in">
+      <p class="section-label" data-key="styleLabel">maßgeschneidert</p>
+      <p class="style-switch-desc" data-key="styleDesc">du entscheidest, wie dein text aussieht. Subrosa passt sich deinem schreibstil an. probier es aus:</p>
+      <div class="style-options">
+        <button class="style-opt active" data-style="casual">
+          <div class="style-opt-name">entspannt</div>
+          <div class="style-opt-preview">alles klein, locker, mit emojis :)</div>
+        </button>
+        <button class="style-opt" data-style="formal">
+          <div class="style-opt-name">Professionell</div>
+          <div class="style-opt-preview">Korrekte Rechtschreibung. Seriös formatiert.</div>
+        </button>
+        <button class="style-opt" data-style="messy">
+          <div class="style-opt-name">handy tippler</div>
+          <div class="style-opt-preview">so Wie man halt am handyy tippt lol</div>
+        </button>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="steps fade-in">
+      <p class="section-label" data-edit>wie es funktioniert</p>
+      <div class="steps-list">
+        <div class="step">
+          <span class="step-num">1.</span>
+          <div>
+            <h3 data-key="step1h">drücken</h3>
+            <p data-key="step1p">tipp zweimal (2x) die lautstärketaste an, egal in welcher app.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">2.</span>
+          <div>
+            <h3 data-key="step2h">sprechen</h3>
+            <p data-key="step2p">sag, was dir durch den kopf geht.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">3.</span>
+          <div>
+            <h3 data-key="step3h">nochmal drücken</h3>
+            <p data-key="step3p">dein text wird automatisch eingefügt. genau da wo du ihn brauchst.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="features">
+      <p class="section-label fade-in" data-edit>vorteile</p>
+      <div class="features-grid">
+        <div class="feature-card glass fade-in delay-1">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          </div>
+          <h3 data-key="feat1h">überall einsatzbereit</h3>
+          <p data-key="feat1p">egal ob whatsapp, notion, google docs oder deine notiz app. Subrosa fügt den text dort ein, wo du ihn brauchst.</p>
+        </div>
+        <div class="feature-card glass fade-in delay-2">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 data-key="feat2h">multilingual</h3>
+          <p data-key="feat2p">sprich einfach los. Subrosa erkennt die sprache automatisch und transkribiert fehlerfrei. auch deutsch und englisch gemischt.</p>
+        </div>
+        <div class="feature-card glass fade-in delay-3">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 data-key="feat3h">barrierefrei gedacht</h3>
+          <p data-key="feat3p">wir wollen, dass jede stimme genutzt werden kann. einfachste bedienung ohne komplizierte menüs.</p>
+        </div>
+        <div class="feature-card glass fade-in delay-3">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 data-key="feat4h">zeit sparen und tracken</h3>
+          <p data-key="feat4p">sieh in deinen stats, wie viele stunden tippen du dir diese woche gespart hast.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="testimonial fade-in">
+      <blockquote data-key="quote">„als journalist muss ich oft schnell gedanken festhalten. Subrosa ist das erste tool, das meinen workflow nicht unterbricht, sondern beschleunigt."</blockquote>
+      <cite data-key="quoteCite">— ein sehr beschäftigter mensch</cite>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="pricing fade-in" id="pricing">
+      <h2 data-key="pricingTitle">wähle deinen plan</h2>
+      <div class="pricing-grid">
+        <div class="plan">
+          <span class="plan-name" data-key="plan1Name">reinschnuppern</span>
+          <span class="plan-price" data-key="plan1Price">0 €</span>
+          <p class="plan-desc" data-key="plan1Desc">3 tage volle funktion.<br>perfekt zum ausprobieren.</p>
+          <a href="#download" class="plan-cta" data-key="plan1Cta">gratis testen</a>
+        </div>
+        <div class="plan">
+          <span class="plan-name" data-key="plan2Name">Subrosa</span>
+          <span class="plan-price" data-key="plan2Price">27 € <span>/ jahr</span></span>
+          <p class="plan-desc" data-key="plan2Desc">voller zugriff auf alle features.<br>preisgarantie für das erste jahr.</p>
+          <a href="#download" class="plan-cta primary" data-key="plan2Cta">jetzt sichern</a>
+        </div>
+        <div class="plan">
+          <span class="plan-name" data-key="plan3Name">für extrawürste :)</span>
+          <span class="plan-price" data-key="plan3Price">individuell</span>
+          <p class="plan-desc" data-key="plan3Desc">dir fehlt noch was an Subrosa?<br>ein feature das du unbedingt brauchst?</p>
+          <a href="#join" class="plan-cta" data-key="plan3Cta">lass uns reden</a>
+        </div>
+      </div>
+      <p class="pricing-note" data-key="pricingNote">hinweis: nach dem ersten jahr schauen wir gemeinsam, wie es weitergeht. wir garantieren den preis aktuell nur für die ersten 12 monate :)</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="early-access fade-in" id="download">
+      <p class="section-label" data-key="eaLabel">early access</p>
+      <h2 class="ea-title" data-key="eaTitle">Subrosa ist bereits <em>verfügbar</em></h2>
+      <p class="ea-desc" data-key="eaDesc1">die app ist noch nicht im app store (jaja, der approval prozess), aber du kannst sie jetzt schon nutzen. als early-access user bekommst du eine kostenlose testphase auf unbestimmte zeit, mit bis zu 1.000 wörtern alle 3 stunden.</p>
+      <p class="ea-desc" data-key="eaDesc2">1.000 wörter? das sind 5 whatsapp-verläufe, 3 notion-seiten oder die komplette gedankenwelt die du hattest während du so getan hast als würdest du zuhören.</p>
+
+      <div class="ea-steps">
+        <div class="ea-step">
+          <span class="step-num">1.</span>
+          <div>
+            <h3 data-key="ea1h">apk herunterladen</h3>
+            <p data-key="ea1p">am einfachsten: öffne diese seite direkt auf deinem android-handy (z.b. den link an dich selbst schicken per whatsapp oder signal). dann tippe hier auf den download-button.</p>
+            <a href="https://github.com/leonbubova/shush-app-releases/releases/download/v0.8.0/shush-app-v0.8.0.apk" class="ea-download" target="_blank" rel="noopener">download apk</a>
+          </div>
+        </div>
+        <div class="ea-step">
+          <span class="step-num">2.</span>
+          <div>
+            <h3 data-key="ea2h">installation erlauben</h3>
+            <p data-key="ea2p">dein handy fragt, ob du apps aus unbekannten quellen installieren willst. tippe auf „einstellungen" und aktiviere die erlaubnis für deinen browser.</p>
+          </div>
+        </div>
+        <div class="ea-step">
+          <span class="step-num">3.</span>
+          <div>
+            <h3 data-key="ea3h">app installieren</h3>
+            <p data-key="ea3p">öffne die heruntergeladene datei und tippe auf „installieren". nach der installation öffne Subrosa.</p>
+          </div>
+        </div>
+        <div class="ea-step">
+          <span class="step-num">4.</span>
+          <div>
+            <h3 data-key="ea4h">mikrofon erlauben</h3>
+            <p data-key="ea4p">android fragt beim ersten mal automatisch — einfach „erlauben" tippen.</p>
+          </div>
+        </div>
+        <div class="ea-step">
+          <span class="step-num">5.</span>
+          <div>
+            <h3 data-key="ea5h">benachrichtigungen erlauben</h3>
+            <p data-key="ea5p">damit Subrosa dir den aufnahme-status anzeigen kann. auch hier einfach „erlauben".</p>
+          </div>
+        </div>
+        <div class="ea-step">
+          <span class="step-num">6.</span>
+          <div>
+            <h3 data-key="ea6h">bedienungshilfen aktivieren</h3>
+            <p data-key="ea6p">damit Subrosa text in andere apps einfügen kann. du wirst zu den android-einstellungen weitergeleitet. finde Subrosa in der liste, aktiviere den schalter und bestätige.</p>
+          </div>
+        </div>
+        <div class="ea-step">
+          <span class="step-num">7.</span>
+          <div>
+            <h3 data-key="ea7h">loslegen</h3>
+            <p data-key="ea7p">drück 2 mal die leiser-taste, sprich los, und drück noch 2 mal. dein text wird automatisch ins aktive textfeld eingefügt. in jeder deiner apps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="early-access fade-in" id="desktop">
+      <p class="section-label">neu</p>
+      <h2 class="ea-title">Subrosa gibt's jetzt auch für den <em>desktop</em></h2>
+      <p class="ea-desc">mac und windows. statt der leiser-taste hältst du die rechte option-taste (windows: rechte alt-taste) gedrückt, sprichst, und lässt los. dein text erscheint direkt im aktiven textfeld. kurz antippen sperrt die aufnahme für längere diktate, nochmal antippen stoppt sie. neu: die taste kannst du in den einstellungen frei umbelegen — praktisch z.b. auf tastaturen, wo rechts altgr liegt.</p>
+
+      <div class="ea-steps">
+        <div class="ea-step">
+          <span class="step-num">1.</span>
+          <div>
+            <h3>herunterladen</h3>
+            <div class="ea-downloads">
+              <a href="https://github.com/leonbubova/shush-app-releases/releases/download/desktop-v0.2.0/shush-desktop-0.2.0-mac-apple-silicon.dmg" class="ea-download" target="_blank" rel="noopener">mac (apple silicon)</a>
+              <a href="https://github.com/leonbubova/shush-app-releases/releases/download/desktop-v0.2.0/shush-desktop-0.2.0-mac-intel.dmg" class="ea-download" target="_blank" rel="noopener">mac (intel)</a>
+              <a href="https://github.com/leonbubova/shush-app-releases/releases/download/desktop-v0.2.0/shush-desktop-0.2.0-windows-setup.exe" class="ea-download" target="_blank" rel="noopener">windows</a>
+            </div>
+          </div>
+        </div>
+        <div class="ea-step">
+          <span class="step-num">2.</span>
+          <div>
+            <h3>installieren</h3>
+            <p>mac: dmg öffnen und Subrosa in programme ziehen. wir sind noch nicht bei apple registriert, macOS blockiert die app deshalb beim ersten start. der fix: terminal öffnen (spotlight, „terminal" tippen), das hier einfügen und enter drücken: <code>xattr -cr /Applications/Shush.app</code>. danach startet Subrosa ganz normal. windows: setup ausführen und die smartscreen-warnung mit „weitere informationen" und „trotzdem ausführen" bestätigen.</p>
+          </div>
+        </div>
+        <div class="ea-step">
+          <span class="step-num">3.</span>
+          <div>
+            <h3>loslegen</h3>
+            <p>beim ersten start mikrofon und bedienungshilfen erlauben, damit Subrosa dich hören und text einfügen kann. dann: rechte option-taste halten und lossprechen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="cta fade-in" id="join">
+      <div class="cta-glow"></div>
+      <h2 data-key="ctaTitle">werde teil der <em>reise</em></h2>
+      <p data-key="ctaSub">wir dokumentieren die entwicklung von Subrosa transparent. du willst feedback geben oder zu den ersten usern gehören?</p>
+      <form class="cta-form" id="waitlistForm">
+        <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+        <div class="cta-input-row">
+          <input type="email" name="email" id="waitlistEmail" placeholder="deine email" required>
+          <button type="submit" class="cta-submit">dabei sein <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div>
+        <p class="cta-feedback" id="waitlistFeedback"></p>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <span>mit claude und liebe gebaut in köln ❤️</span>
+        <span class="hidden-message">du hast das geheimnis gefunden. 🤫</span>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <a href="#" data-legal="impressum">impressum</a>
+          <a href="#" data-legal="datenschutz">datenschutz</a>
+          <a class="li-link" data-li="leonbubova">linkedIn</a>
+        </div>
+        <span class="footer-copy">© <script>document.write(new Date().getFullYear())</script> Subrosa</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="legal-overlay" id="legalOverlay">
+    <div class="legal-modal">
+      <button class="legal-close" id="legalClose">&times;</button>
+      <div id="legalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
