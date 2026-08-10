@@ -1,6 +1,6 @@
 # Subrosa — deine stimme, dein text
 
-**[leonbubova.github.io/subrosa-landingpage](https://leonbubova.github.io/subrosa-landingpage)**
+**[subrosa-voice.de](https://subrosa-voice.de)**
 
 Subrosa nimmt auf, was du sagst, und macht daraus fertigen text. direkt in deine lieblings apps.
 

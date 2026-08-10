@@ -474,7 +474,7 @@ console.log(
   'font-size: 48px; font-weight: bold; color: #c4b5fd; text-shadow: 2px 2px 0 #1a1a2e;'
 );
 console.log(
-  '%cneugierig? schreib uns → leonbubova.github.io/subrosa-landingpage',
+  '%cneugierig? schreib uns → subrosa-voice.de',
   'font-size: 14px; color: #888; font-family: monospace;'
 );
 
