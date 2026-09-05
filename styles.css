@@ -619,3 +619,131 @@ body.editing [data-edit]:focus {
   .fade-in { opacity: 1; filter: none; transform: none; }
   .blob { animation: none; }
 }
+
+/* =====================================================================
+   NEW: Shared page components (site-*) — facts rollout, 2026-09-05
+   Existing styles above this marker are unchanged.
+   ===================================================================== */
+.site-footer-links { flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+.site-component-fallback {
+  display: inline-block; padding: 0.75rem 0;
+  color: var(--accent); font-size: 0.8rem; text-underline-offset: 4px;
+}
+.site-skip-link {
+  position: fixed; top: 0.75rem; left: 1rem; z-index: 400;
+  padding: 0.6rem 1rem; background: var(--surface); color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 8px;
+  transform: translateY(-200%);
+}
+.site-skip-link:focus { transform: translateY(0); }
+.site-error-main { min-height: 75vh; padding-top: 10rem; padding-bottom: 5rem; }
+.site-error-main h1 {
+  font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400;
+}
+.site-error-main h1 em { color: var(--accent); }
+.site-error-main p { margin: 1rem 0 2rem; color: var(--text-2); }
+.site-error-page > .container { width: 100%; }
+
+/* =====================================================================
+   NEW: Facts overview (/fakten/) — all new classes use facts-*.
+   ===================================================================== */
+.facts-main { padding-top: 9rem; }
+.facts-hero { padding-bottom: 2.5rem; }
+.facts-eyebrow {
+  margin-bottom: 0.9rem; color: var(--accent); font-size: 0.68rem;
+  font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.facts-hero h1 {
+  font-family: var(--serif); font-size: clamp(2.8rem, 7vw, 4.5rem);
+  line-height: 1.08; font-weight: 400; letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+}
+.facts-hero h1 em, .facts-section h2 em, .facts-outro h2 em { color: var(--accent); }
+.facts-intro, .facts-section-intro, .facts-outro > p:not(.facts-eyebrow) {
+  max-width: 600px; font-size: 0.95rem; font-weight: 300; color: var(--text-2);
+}
+.facts-meta { margin-top: 1.5rem; font-size: 0.72rem; color: var(--text-2); }
+.facts-index {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid var(--border); margin-bottom: 0.5rem;
+}
+.facts-index a {
+  display: flex; align-items: center; gap: 0.7rem; padding: 1.2rem 0.85rem;
+  text-decoration: none; color: var(--text); font-size: 0.8rem;
+  transition: background 0.2s;
+}
+.facts-index a + a { border-left: 1px solid var(--border); }
+.facts-index a:hover { background: var(--accent-dim); }
+.facts-index a span { color: var(--accent); font-size: 0.7rem; }
+.facts-index a span:last-child { margin-left: auto; }
+.facts-section { padding: 4rem 0; scroll-margin-top: 1.5rem; }
+.facts-section + .facts-section { border-top: 1px solid var(--border); }
+.facts-section h2, .facts-outro h2 {
+  font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15;
+  font-weight: 400; letter-spacing: -0.025em; margin-bottom: 1rem;
+}
+.facts-section-intro { margin-bottom: 2rem; }
+.facts-card { padding: 1.75rem; border-radius: 14px; min-width: 0; scroll-margin-top: 5rem; }
+.facts-card h3 { font-size: 1.1rem; font-weight: 500; margin-bottom: 0.65rem; }
+.facts-card > p:not(.facts-eyebrow) { font-size: 0.85rem; color: var(--text-2); }
+.facts-data { margin-top: 1.5rem; font-size: 0.8rem; }
+.facts-data > div {
+  display: grid; grid-template-columns: 135px minmax(0, 1fr); gap: 1rem;
+  border-top: 1px solid var(--border); padding: 0.85rem 0;
+}
+.facts-data dt { color: var(--text-2); font-weight: 400; }
+.facts-data dd { overflow-wrap: anywhere; }
+.facts-data a, .facts-link { color: var(--accent); text-underline-offset: 4px; }
+.facts-data a:hover, .facts-link:hover { color: var(--text); }
+.facts-link { display: inline-block; font-size: 0.8rem; margin-top: 1.25rem; }
+.facts-actions { display: flex; flex-wrap: wrap; gap: 0 1.5rem; }
+.facts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.facts-grid .facts-card { padding: 1.5rem; }
+.facts-data-stacked > div { grid-template-columns: 1fr; gap: 0.25rem; }
+.facts-data-stacked dt { font-size: 0.7rem; }
+.facts-outro { padding: 3.5rem 0 4.5rem; border-top: 1px solid var(--border); }
+.facts-outro .hero-cta { margin-top: 1.5rem; }
+.facts-page a:focus-visible, .site-error-page a:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 3px;
+}
+@media (max-width: 600px) {
+  .facts-main { padding-top: 7rem; }
+  .facts-grid { grid-template-columns: 1fr; }
+  .facts-index { grid-template-columns: 1fr; }
+  .facts-index a { padding-inline: 0.5rem; }
+  .facts-index a + a { border-left: 0; border-top: 1px solid var(--border); }
+  .facts-card { padding: 1.25rem; }
+  .facts-data > div { grid-template-columns: 1fr; gap: 0.25rem; }
+  .facts-section { padding: 3rem 0; }
+  .facts-page nav, .site-error-page nav { transform: none; }
+}
+/* END NEW: shared components and facts overview */
+
+/* =====================================================================
+   NEW: Solution cases (/fakten/loesungsfaelle/) — classes use case-*.
+   ===================================================================== */
+.case-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.case-index a:nth-child(odd) { border-left: 0; }
+.case-index a:nth-child(n+3) { border-top: 1px solid var(--border); }
+.case-breadcrumb {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 0.65rem; margin-bottom: 2rem;
+  color: var(--text-2); font-size: 0.72rem;
+}
+.case-breadcrumb a { color: var(--accent); text-underline-offset: 4px; }
+.case-examples { display: grid; gap: 1.5rem; }
+.case-steps { list-style: none; counter-reset: case-step; margin-bottom: 2rem; }
+.case-steps li {
+  counter-increment: case-step; position: relative;
+  padding: 0 0 1.75rem 2.75rem;
+}
+.case-steps li::before {
+  content: counter(case-step) "."; position: absolute; left: 0; top: -0.2rem;
+  font-family: var(--serif); font-size: 1.75rem; color: var(--accent);
+}
+.case-steps h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
+.case-steps p { color: var(--text-2); font-size: 0.85rem; }
+.case-note { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+@media (max-width: 600px) {
+  .case-index { grid-template-columns: 1fr; }
+}
+/* END NEW: solution cases */
