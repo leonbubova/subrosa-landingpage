@@ -32,6 +32,7 @@ function initializeFooter() {
       <p>Kontakt: über das <a href="/#join">Formular auf der Startseite</a></p>`,
     datenschutz: () => `<h3>Datenschutz</h3>
       <p>diese seite setzt keine cookies und nutzt kein tracking. es werden keine analyse-tools oder werbedienste eingebunden.</p>
+      <p>die Subrosa-app verarbeitet deine sprache lokal auf deinem gerät. sprachaufnahmen werden nicht an server übertragen.</p>
       <p>wenn du deine email-adresse über das formular einträgst, wird diese ausschließlich gespeichert, um dich zu informieren, wenn Subrosa verfügbar ist. deine email wird nicht an dritte weitergegeben. du kannst jederzeit die löschung deiner daten verlangen — schreib uns einfach über das formular.</p>
       <p>die seite wird über GitHub Pages gehostet. dabei können serverseitig technisch notwendige zugriffsdaten (z.b. IP-adresse) verarbeitet werden. details dazu findest du in der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Policy</a>.</p>`
   };

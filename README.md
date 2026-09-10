@@ -16,6 +16,7 @@ Subrosa nimmt auf, was du sagst, und macht daraus fertigen text. direkt in deine
 - **multilingual** — erkennt die sprache automatisch, auch gemischt
 - **barrierefrei** — einfachste bedienung ohne komplizierte menüs
 - **zeit sparen** — sieh in deinen stats, wie viele stunden tippen du dir gespart hast
+- **lokal verarbeitet** — sprache wird auf dem gerät in text verwandelt, aufnahmen gehen an keinen server
 
 ## early access
 
