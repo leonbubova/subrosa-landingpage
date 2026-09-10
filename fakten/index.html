@@ -42,8 +42,7 @@
         "@type": "Person",
         "@id": "https://subrosa-voice.de/fakten/#betreiber",
         "name": "Leon Bubova",
-        "description": "Im Impressum von Subrosa genannter Betreiber.",
-        "address": {"@type": "PostalAddress", "streetAddress": "Richard-Wagner-Str. 51", "postalCode": "50674", "addressLocality": "Köln", "addressCountry": "DE"}
+        "description": "Im Impressum von Subrosa genannter Betreiber."
       },
       {
         "@type": "SoftwareApplication",
@@ -54,7 +53,7 @@
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": ["Android", "macOS", "Windows"],
         "publisher": {"@id": "https://subrosa-voice.de/fakten/#betreiber"},
-        "featureList": ["Transkription von Sprache in Text", "Datenschutz durch lokale Sprachverarbeitung ohne Übertragung an Drittserver", "Spracheingabe per Tastenkombination in Apps ohne eigene Diktierfunktion", "Zeitersparnis durch Statistiken nachvollziehen"]
+        "featureList": ["Transkription von Sprache in Text", "Automatische Spracherkennung, auch bei gemischten Sprachen", "Spracheingabe per Tastenkombination in Apps ohne eigene Diktierfunktion", "Zeitersparnis durch Statistiken nachvollziehen"]
       }
     ]
   }
@@ -93,7 +92,7 @@
           <div><dt>Name</dt><dd>Leon Bubova</dd></div>
           <div><dt>Rolle</dt><dd>Betreiber laut Impressum</dd></div>
           <div><dt>Produkt</dt><dd><a href="#app">Subrosa – Sprach-zu-Text-App</a></dd></div>
-          <div><dt>Adresse</dt><dd>Richard-Wagner-Str. 51, 50674 Köln, Deutschland</dd></div>
+          <div><dt>Anschrift</dt><dd><a href="#" data-legal="impressum">siehe Impressum</a></dd></div>
           <div><dt>Website</dt><dd><a href="https://subrosa-voice.de/">subrosa-voice.de</a></dd></div>
           <div><dt>Kontakt</dt><dd><a href="/#join">Formular auf der Startseite</a></dd></div>
         </dl>
@@ -113,7 +112,7 @@
           <div><dt>Name</dt><dd>Subrosa</dd></div>
           <div><dt>Kategorie</dt><dd>Produktivität / Spracheingabe</dd></div>
           <div><dt>Zweck</dt><dd>Text per Stimme erstellen und manuelles Tippen reduzieren</dd></div>
-          <div><dt>Sprachverarbeitung</dt><dd>Lokal auf dem Gerät; keine Übertragung der Sprachaufnahmen an Drittserver</dd></div>
+          <div><dt>Sprachen</dt><dd>Automatische Erkennung der gesprochenen Sprache, auch bei gemischten Sprachen</dd></div>
           <div><dt>Plattformen</dt><dd>Android, macOS (Apple Silicon und Intel), Windows</dd></div>
           <div><dt>Verfügbarkeit</dt><dd>Early Access; Android als APK, Desktop als direkter Download</dd></div>
           <div><dt>Einsatz</dt><dd>Nachrichten, Notizen und Dokumente, zum Beispiel in WhatsApp, Notion oder Google Docs</dd></div>
@@ -129,7 +128,7 @@
     <section class="facts-section" id="funktionen" aria-labelledby="funktionen-title">
       <p class="facts-eyebrow">03 / Entität: Funktion</p>
       <h2 id="funktionen-title">weniger tippen.<br><em>mehr du.</em></h2>
-      <p class="facts-section-intro">Sprache in Text verwandeln, Sprachaufnahmen lokal verarbeiten, andere Apps um Spracheingabe erweitern und die eigene Zeitersparnis nachvollziehen: Das sind die vier Kernfunktionen von Subrosa.</p>
+      <p class="facts-section-intro">Sprache in Text verwandeln, Sprachen automatisch erkennen, andere Apps um Spracheingabe erweitern und die eigene Zeitersparnis nachvollziehen: Das sind die vier Kernfunktionen von Subrosa.</p>
       <div class="facts-grid">
         <article class="facts-card glass" id="transkription">
           <p class="facts-eyebrow">Funktion / 01</p><h3>Transkription</h3>
@@ -141,13 +140,13 @@
             <div><dt>Gehört zu</dt><dd><a href="#app">Subrosa</a></dd></div>
           </dl>
         </article>
-        <article class="facts-card glass" id="lokale-sprachverarbeitung">
-          <p class="facts-eyebrow">Funktion / 02</p><h3>Datenschutz durch lokale Verarbeitung</h3>
-          <p>Deine Sprache wird ausschließlich lokal auf deinem Gerät verarbeitet. Sprachaufnahmen werden nicht zur Verarbeitung an Drittserver geschickt.</p>
+        <article class="facts-card glass" id="mehrsprachig">
+          <p class="facts-eyebrow">Funktion / 02</p><h3>Mehrsprachig ohne Umschalten</h3>
+          <p>Subrosa erkennt die gesprochene Sprache automatisch. Das funktioniert auch, wenn du innerhalb eines Diktats zwischen Sprachen wechselst.</p>
           <dl class="facts-data facts-data-stacked">
-            <div><dt>Ziel</dt><dd>Gesprochene Inhalte bei der Transkription auf dem eigenen Gerät halten</dd></div>
-            <div><dt>Ablauf</dt><dd>Die Sprachverarbeitung erfolgt direkt auf deinem Gerät statt auf externen Servern.</dd></div>
-            <div><dt>Ergebnis</dt><dd>Transkribierter Text ohne Übertragung deiner Sprachaufnahmen an Drittserver</dd></div>
+            <div><dt>Ziel</dt><dd>In mehreren Sprachen diktieren, ohne vorher eine Sprache einzustellen</dd></div>
+            <div><dt>Ablauf</dt><dd>Einfach sprechen; die Sprache wird während der Transkription erkannt.</dd></div>
+            <div><dt>Ergebnis</dt><dd>Text in der jeweils gesprochenen Sprache, auch bei gemischten Sätzen</dd></div>
             <div><dt>Gehört zu</dt><dd><a href="#app">Subrosa</a></dd></div>
           </dl>
         </article>
@@ -187,7 +186,7 @@
           <div><dt>Lösung</dt><dd>Gespräche, Beobachtungen und eigene Gedanken zeitnah transkribieren</dd></div>
           <div><dt>Zielgruppen</dt><dd>Menschen mit Terminen vor Ort oder beratenden Gesprächen</dd></div>
           <div><dt>Branchenbeispiele</dt><dd>Immobilienwirtschaft, Notariate, Handwerk und Außendienst</dd></div>
-          <div><dt>Funktionen</dt><dd><a href="#transkription">Transkription</a>, <a href="#lokale-sprachverarbeitung">lokale Sprachverarbeitung</a>, <a href="#texteinfuegen">Spracheingabe in Apps</a> und <a href="#statistiken">Statistiken</a></dd></div>
+          <div><dt>Funktionen</dt><dd><a href="#transkription">Transkription</a>, <a href="#mehrsprachig">Spracherkennung</a>, <a href="#texteinfuegen">Spracheingabe in Apps</a> und <a href="#statistiken">Statistiken</a></dd></div>
         </dl>
         <a class="facts-link" href="/fakten/loesungsfaelle/gespraeche-und-gedanken-festhalten/">Lösungsfall und Branchenbeispiele ansehen ↗</a>
       </article>

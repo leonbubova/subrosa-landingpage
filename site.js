@@ -75,6 +75,13 @@ function initializeFooter() {
   });
 
 
+  // --- LinkedIn (obfuscated) ---
+  const liLink = document.querySelector('.li-link');
+  if (liLink) liLink.addEventListener('click', () => {
+    const u = ['https://www.', 'linked', 'in.com/in/'].join('');
+    window.open(u + liLink.dataset.li + '/', '_blank', 'noopener');
+  });
+
   document.querySelectorAll('[data-current-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 }
 
