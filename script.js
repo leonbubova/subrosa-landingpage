@@ -53,12 +53,6 @@ if ('DeviceMotionEvent' in window) {
   });
 }
 
-// Nav scroll effect
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-
 // --- Organic waveform ---
 const canvas = document.getElementById('waveform');
 const ctx = canvas.getContext('2d');
@@ -257,6 +251,7 @@ const styles = {
     feat2h: 'Mehrsprachig', feat2p: 'Sprechen Sie einfach los. Subrosa erkennt die Sprache automatisch und transkribiert zuverlässig. Auch Deutsch und Englisch gemischt.',
     feat3h: 'Barrierefreiheit im Fokus', feat3p: 'Wir möchten, dass jede Stimme genutzt werden kann. Intuitive Bedienung ohne komplexe Menüführung.',
     feat4h: 'Zeitersparnis im Überblick', feat4p: 'Verfolgen Sie in Ihren Statistiken, wie viele Stunden Tipparbeit Sie sich diese Woche gespart haben.',
+    feat5h: 'Lokale Verarbeitung', feat5p: 'Ihre Sprache wird ausschließlich auf Ihrem Gerät in Text umgewandelt. Aufnahmen verlassen das Gerät nicht.',
     quote: '„Als Journalist muss ich häufig schnell Gedanken festhalten. Subrosa ist das erste Tool, das meinen Workflow nicht unterbricht, sondern merklich beschleunigt."',
     quoteCite: '— Ein sehr beschäftigter Mensch',
     pricingTitle: 'Wählen Sie Ihren Plan',
@@ -291,6 +286,7 @@ const styles = {
     feat2h: 'multilingual', feat2p: 'sprich einfach los. Subrosa erkennt die sprache automatisch und transkribiert fhelerfrei auch deutsch und englisch gemischt',
     feat3h: 'barrierefrei gedacht', feat3p: 'wir wollen dass jede stimme genuzt werden kann einfachste bedienung ohne komplizierte Menüs',
     feat4h: 'Zeit sparen und tracken', feat4p: 'sieh in deinen stats wie viele stunden tippen du dir diese Woche gespart hast',
+    feat5h: 'lokal verarbeitet', feat5p: 'deine stimme bleibt auf deinem gerät die sprache wird lokal in text verwandelt aufnahmen gehen an keinen server',
     quote: '„als Journalist muss ich oft schnell gedanken festhalten. Subrosa ist das erste tool das meinen Workflow nicht unterbricht sondern beschleunigt"',
     quoteCite: '— ein sehr beschäftigter Mensch',
     pricingTitle: 'wähle deinen Plan',
@@ -404,41 +400,6 @@ document.getElementById('waitlistForm').addEventListener('submit', async (e) => 
   btn.innerHTML = 'dabei sein <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
 });
 
-// --- Legal modals (content rendered via JS, not in HTML source) ---
-const legalContent = {
-  impressum: () => `<h3>Impressum</h3>
-    <p>${['Leon',' Bubova'].join('')}<br>${['Richard-Wagner-','Str. 51'].join('')}<br>${['50674',' Köln'].join('')}</p>
-    <p>Kontakt: über das Formular auf dieser Seite</p>`,
-  datenschutz: () => `<h3>Datenschutz</h3>
-    <p>diese seite setzt keine cookies und nutzt kein tracking. es werden keine analyse-tools oder werbedienste eingebunden.</p>
-    <p>wenn du deine email-adresse über das formular einträgst, wird diese ausschließlich gespeichert, um dich zu informieren, wenn Subrosa verfügbar ist. deine email wird nicht an dritte weitergegeben. du kannst jederzeit die löschung deiner daten verlangen — schreib uns einfach über das formular.</p>
-    <p>die seite wird über GitHub Pages gehostet. dabei können serverseitig technisch notwendige zugriffsdaten (z.b. IP-adresse) verarbeitet werden. details dazu findest du in der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Policy</a>.</p>`
-};
-
-const overlay = document.getElementById('legalOverlay');
-const legalEl = document.getElementById('legalContent');
-
-document.querySelectorAll('[data-legal]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const key = link.dataset.legal;
-    if (legalContent[key]) {
-      legalEl.innerHTML = legalContent[key]();
-      overlay.classList.add('visible');
-    }
-  });
-});
-
-document.getElementById('legalClose').addEventListener('click', () => overlay.classList.remove('visible'));
-overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('visible'); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('visible'); });
-
-// --- LinkedIn (obfuscated) ---
-document.querySelector('.li-link').addEventListener('click', () => {
-  const u = ['https://www.','linked','in.com/in/',null].filter(Boolean).join('');
-  window.open(u + document.querySelector('.li-link').dataset.li + '/', '_blank');
-});
-
 // --- Editor ---
 let editMode = false;
 
@@ -453,7 +414,8 @@ function toggleEdit(on) {
   });
 }
 
-document.getElementById('editToggle').addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#editToggle')) return;
   e.preventDefault();
   toggleEdit(!editMode);
 });

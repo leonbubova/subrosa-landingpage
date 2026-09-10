@@ -53,17 +53,7 @@
     <div class="blob blob-3"></div>
   </div>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="#" class="nav-logo" data-edit>Subrosa</a>
-      <div class="nav-links">
-        <a href="#download">Early Access</a>
-        <a href="#desktop">Desktop</a>
-        <a href="#join">Community</a>
-        <a href="#" id="editToggle" style="display:none">Edit</a>
-      </div>
-    </div>
-  </nav>
+<div data-include="header"><a class="site-component-fallback" href="/">Subrosa</a></div>
 
   <div class="container">
 
@@ -178,6 +168,13 @@
           </div>
           <h3 data-key="feat4h">zeit sparen und tracken</h3>
           <p data-key="feat4p">sieh in deinen stats, wie viele stunden tippen du dir diese woche gespart hast.</p>
+        </div>
+        <div class="feature-card glass fade-in delay-3">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3 data-key="feat5h">lokal verarbeitet</h3>
+          <p data-key="feat5p">deine stimme bleibt auf deinem gerät. die sprache wird lokal in text verwandelt, aufnahmen gehen an keinen server.</p>
         </div>
       </div>
     </section>
@@ -330,30 +327,13 @@
       </form>
     </section>
 
-    <footer>
-      <div class="footer-top">
-        <span>mit claude und liebe gebaut in köln ❤️</span>
-        <span class="hidden-message">du hast das geheimnis gefunden. 🤫</span>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-links">
-          <a href="#" data-legal="impressum">impressum</a>
-          <a href="#" data-legal="datenschutz">datenschutz</a>
-          <a class="li-link" data-li="leonbubova">linkedIn</a>
-        </div>
-        <span class="footer-copy">© <script>document.write(new Date().getFullYear())</script> Subrosa</span>
-      </div>
-    </footer>
+<div data-include="footer"><a class="site-component-fallback" href="/fakten/">fakten</a></div>
 
   </div>
 
-  <div class="legal-overlay" id="legalOverlay">
-    <div class="legal-modal">
-      <button class="legal-close" id="legalClose">&times;</button>
-      <div id="legalContent"></div>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
+
+  <script src="/site.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
